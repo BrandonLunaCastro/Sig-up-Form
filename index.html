@@ -19,43 +19,52 @@
             <section class="info">
                 <p>Sing up to see the complete catalogue and the best offers!</p>
             </section>
-            <form method="get" for="" autocomplete="off">
-               <section class="form_camps">
+            <form method="get" for="" autocomplete="off" id="form">
+               <section class="form_field">
                    <legend>Let`s do this!</legend>
                    <div class="form__group">
-                       <input class="form__input" id="name" name="name" type="text" placeholder=" " >  
+                       <input class="form__input" id="name" name="name" type="text" placeholder=" " required >  
                        <label class="form__label" for="name">Name</label>
                    </div>
                    <div class="form__group">
-                       <input class="form__input" type="text" name="last-name" id="last-name" placeholder=" ">  
+                       <input class="form__input" type="text" name="last-name" id="last-name" placeholder=" " required>  
                        <label class="form__label" for="last-name">Last name</label>
                    </div>
                    <div class="form__group">
-                       <input class="form__input" type="email" name="email" id="email" required placeholder=" ">    
+                       <input class="form__input input__required" type="email" name="email" id="email" placeholder=" " required>    
                        <label class="form__label" for="email">Email</label>
-                   </div>
+                       <span></span>
+                    </div>
                    <div class="form__group">
-                       <input class="form__input" type="tel" name="phone" id="phone" placeholder=" ">
+                       <input class="form__input" type="tel" name="phone" id="phone" placeholder=" " required>
                        <label class="form__label" for="phone">Phone Number</label>
                    </div>
                    <div class="form__group">
-                       <input class="form__input" type="password" name="password" id="password" placeholder=" ">
+                       <input class="form__input input__required" type="password" name="password" id="password" placeholder=" " required>
                        <label class="form__label" for="password">Password</label>
+                       <span></span>
                     </div>
                     <div class="form__group">
-                        <input class="form__input" type="password" name="re-password" id="re-password" placeholder=" "> 
+                        <input class="form__input input__required" type="password" name="re-password" id="re-password" placeholder=" " required> 
                         <label class="form__label" for="re-password">Confirm password</label>
+                        <span></span>
                     </div>
                </section>
                 <section class="form__footer">
-                    <button type="submit" name="submit" id="submit">Create Account</button>
-                    <p id="log__in">Alredy have an account? <a id="log__in__link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"  >Log in</a></p>   
+                    <div class="form__footer__terms">
+                        <p>By signing up,you are agreeing to our <a href="#">Terms & Condition</a> and <a href="#">Privacy Policy</a></p>
+                    </div>
+                    <div class="form__footer__login">
+                        <button type="submit" name="submit" id="btn-submit">Create Account</button>
+                        <p id="log__in">Alredy have an account? <a id="log__in__link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener">Log in</a></p>       
+                    </div>
                 </section>
             </form> 
             </article>
      </main>
+     <script src="assets/js/form-validation.js"></script>
      <script src="https://kit.fontawesome.com/b94ace870d.js" crossorigin="anonymous"></script>  
-</body>
+    </body>
 </html>
 
 

@@ -7,7 +7,9 @@
     --label-color:#9c9a9a;
     --btn-submit-color:#ffd6ad;
     --input-focus-color:#4f4f4f;
-   
+    --invalid-color:#aa0000;
+    --valid-color:#;
+    --link-color: #d67d23;
 }
 *{
     padding: 0;
@@ -16,17 +18,18 @@
 
  main{
     display: flex;
-    
     height: 100vh;
     background: var(--main-color);
     transition: all 0.9s ease;
+    
 }
 
  .background-image{
     background-image: url(assets/img/pexels-monstera-5634672.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    width:88vw;
+    background-position: center;
+    width:100%;
     height:100%;
 }
 .logo{
@@ -52,7 +55,7 @@
     line-height: 40px;  
 }
 
-.form_camps{
+.form_field{
     background-color: var(--form-color) ;
     padding: 20px 60px;
     box-shadow:  2px 0 5px  rgb(0 0 0 / 0.5);
@@ -65,7 +68,7 @@
 form{
     text-transform: uppercase;
 }
-.form_camps > legend{
+.form_field > legend{
     width: 100%;
     margin-bottom: 15px;
     font-weight: 600;
@@ -85,6 +88,7 @@ form{
 .form__group{
     position: relative;
     width: 250px;
+    margin-right: 30px;
 }
 
 
@@ -92,6 +96,7 @@ form{
     cursor: pointer;
     position: absolute;
     font-size: 0.9rem;
+    max-height: 20px;
     left: 5px;
     top: 0;
     transform: translateY(4px);
@@ -109,19 +114,60 @@ form{
     color: var(--input-focus-color);
   
 }
+span{
+    text-transform: initial;
+}
+/* 
+.input__required:invalid{
+    border-bottom:2px solid var(--invalid-color) ;
+}
+.input__required:invalid + .form__label{
+    color: var(--invalid-color);
+}
+.input__required:invalid ~ span::before{
+    position:relative;
+}
+
+.input__required:invalid ~ span::before{
+    content:"*This field is required";
+    color: var(--invalid-color);
+    font-weight: 600;
+    font-size: 0.7rem;
+    position: absolute;
+    top: 40px;
+    height: 0;
+} */
+
 
 .form__footer{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 280px;
+    flex-direction: column;
+    padding: 20px;
+    
 }
+
+.form__footer__login{
+    display: inherit;
+    align-items: center;
+    gap: 20px;
+}
+.form__footer__terms{
+    text-transform: initial;
+    font-size: 0.8rem;
+}
+.form__footer__terms > p > a{
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: 400;
+}
+
 
 .form__footer > * {
-    margin: 0 25px;
+    margin: 10px 50px;
+
 }
 
-#submit{
+#btn-submit{
     height: 60px;
     width: 190px;
     border-radius: 8px;
@@ -148,5 +194,43 @@ form{
     text-decoration: none;
 }
 #log__in__link:visited{
-    color: #aa0000;
+    color: var(--link-color);
+}
+
+@media screen and (max-width:843px){
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100%;
+    }
+    .background-image{
+        background-size: cover;
+        width: 100vw;
+      
+    }
+}
+@media screen and (max-width:672px){
+     .form_field,  legend{
+        display: flex;
+        justify-content: center;
+        
+    } 
+    .form__input{
+        width: 200px;
+    }
+    .input__required:invalid ~ span::before{
+        position:relative;
+    }
+    
+    .input__required:invalid ~ span::before{
+        content:"*This field is required";
+        color: var(--invalid-color);
+        font-weight: 600;
+        font-size: 0.7rem;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 150px;
+    }
 }
