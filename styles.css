@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 :root{
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
-    --form-color:#f2f5f4 ;
-    --main-color:#fcfcfc;
+    font-size: 1.3rem;
+    --form-color:#fae6d2 ;
+    --main-color:#f2ece7;
+    --label-color:#9c9a9a;
+    --btn-submit-color:#ffd6ad;
+    --input-focus-color:#4f4f4f;
+   
 }
 *{
     padding: 0;
@@ -12,32 +16,137 @@
 
  main{
     display: flex;
+    
     height: 100vh;
     background: var(--main-color);
+    transition: all 0.9s ease;
 }
- 
+
  .background-image{
     background-image: url(assets/img/pexels-monstera-5634672.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    width:calc(100% - 50%);
+    width:88vw;
     height:100%;
 }
-.form-camps{
-    background-color: var(--form-color) ;
-    padding: 20px 60px;
-    box-shadow: 2px 2px 10px rgb(0 0 0 / 0.5);
+.logo{
+    color: var(--logo-color);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(0 0 0 / 0.45);
+    height: 120px;
+    color: var(--main-color);
+    font-size: 1.3rem;
 }
-.form-camps > div{
-    display: flex;
-    flex-direction: column;
-    
+.logo:hover{
+    color: var(--btn-submit-color);
+    cursor: pointer;
 }
 .info{
     padding:50px 60px;
     line-height: 30px;
     font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 40px;  
 }
-.info > p:nth-child(2){
-    margin-top: 1rem;
+
+.form_camps{
+    background-color: var(--form-color) ;
+    padding: 20px 60px;
+    box-shadow:  2px 0 5px  rgb(0 0 0 / 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 91px;
+    justify-content: space-between;
+  
+}
+form{
+    text-transform: uppercase;
+}
+.form_camps > legend{
+    width: 100%;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 30px;
+    text-transform: initial;
+}
+
+.form__input{
+    width: 250px;
+    height: 38px;
+    padding-left: 6px;
+    border: none;
+    border-bottom: 1px solid var(--label-color);
+    background-color: var(--form-color);
+    text-align: inherit;
+}
+.form__group{
+    position: relative;
+    width: 250px;
+}
+
+
+.form__label{
+    cursor: pointer;
+    position: absolute;
+    font-size: 0.9rem;
+    left: 5px;
+    top: 0;
+    transform: translateY(4px);
+    transition: transform .5s, color .3s;
+    color: var(--label-color) ;
+}
+.form__input:focus{
+   outline: none;
+   background-color: var(--form-color);
+}
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown) + .form__label{
+    transform: translateY(-12px) scale(.8);  
+    transform-origin: left top;
+    color: var(--input-focus-color);
+  
+}
+
+.form__footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 280px;
+}
+
+.form__footer > * {
+    margin: 0 25px;
+}
+
+#submit{
+    height: 60px;
+    width: 190px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 550;
+    padding: 0 25px;
+    border: none;
+    background:var(--btn-submit-color) ;
+    box-shadow:1px 2px 3px #9c9a9a ;
+    cursor: pointer;
+    transition: all 0.6s ;
+}
+
+#submit:hover{
+    transform: scale(1.2);
+}
+
+
+#log__in{
+    font-size: 16px;
+}
+#log__in__link{
+    font-weight: bold;
+    text-decoration: none;
+}
+#log__in__link:visited{
+    color: #aa0000;
 }

@@ -4,41 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
+    <link type="favicon" href="assets/img/literatura.png" rel="icon">
     <title>Sig-up form</title>
 </head>
 <body>
      <main>
-        <section class="background-image"></section>
-        <section class="section-form">
-            <form method="get" for="" >
-                <div class="info">
-                    <p>Sing up to see the complete catalogue and the best offers!</p>
-                </div>
-               <section class="form-camps">
-                   <legend>Let´s do this!</legend>
-                   <div>
-                       <label for="name">Name</label>
-                       <input id="name" name="name" type="text" >
-                       <label for="last-name">Lastname</label>
-                       <input type="text" name="last-name" id="last-name">    
-                   </div>
-                   <div>
-                       <label for="email">Email</label>
-                       <input type="email" name="email" id="email">
-                       <label for="phone">Phone Number</label>
-                       <input type="tel" name="phone" id="phone">    
-                   </div>
-                   <div>
-                       <label for="password">Password</label>
-                       <input type="password" name="password" id="password">
-                       <label for="re-password">Confirm password</label>
-                       <input type="password" name="re-password" id="re-password">
-                   </div>
-               </section>
-                    <button type="submit" name="submit">Create Account</button>
-                    <p>Alredy have an account? <a href="#" >Log in</a></p>   
-            </form> 
+        <article class="background-image">
+            <div class="logo">
+                <i class="fa-solid fa-book fa-2xl"></i>
+                <h2>Book Store</h2>   
+             </div> 
+        </article>
+        <article class="form">
+            <section class="info">
+                <p>Sing up to see the complete catalogue and the best offers!</p>
             </section>
+            <form method="get" for="" autocomplete="off">
+               <section class="form_camps">
+                   <legend>Let`s do this!</legend>
+                   <div class="form__group">
+                       <input class="form__input" id="name" name="name" type="text" placeholder=" " >  
+                       <label class="form__label" for="name">Name</label>
+                   </div>
+                   <div class="form__group">
+                       <input class="form__input" type="text" name="last-name" id="last-name" placeholder=" ">  
+                       <label class="form__label" for="last-name">Last name</label>
+                   </div>
+                   <div class="form__group">
+                       <input class="form__input" type="email" name="email" id="email" required placeholder=" ">    
+                       <label class="form__label" for="email">Email</label>
+                   </div>
+                   <div class="form__group">
+                       <input class="form__input" type="tel" name="phone" id="phone" placeholder=" ">
+                       <label class="form__label" for="phone">Phone Number</label>
+                   </div>
+                   <div class="form__group">
+                       <input class="form__input" type="password" name="password" id="password" placeholder=" ">
+                       <label class="form__label" for="password">Password</label>
+                    </div>
+                    <div class="form__group">
+                        <input class="form__input" type="password" name="re-password" id="re-password" placeholder=" "> 
+                        <label class="form__label" for="re-password">Confirm password</label>
+                    </div>
+               </section>
+                <section class="form__footer">
+                    <button type="submit" name="submit" id="submit">Create Account</button>
+                    <p id="log__in">Alredy have an account? <a id="log__in__link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener"  >Log in</a></p>   
+                </section>
+            </form> 
+            </article>
      </main>
+     <script src="https://kit.fontawesome.com/b94ace870d.js" crossorigin="anonymous"></script>  
 </body>
 </html>
+
+
+<!-- 
+        
+        -->
