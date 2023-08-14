@@ -122,7 +122,13 @@ span{
     border-bottom: 2px solid var(--valid-color);
 }
 
-
+.input__valid ~ span::before{
+    content: "✔";
+    color: var(--valid-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
 .input__invalid{
     border-bottom:2px solid var(--invalid-color) ;
@@ -133,7 +139,7 @@ span{
     line-height: 15px;
     color: var(--invalid-color);
     font-weight: 600;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     position: absolute;
     top: 74px;
     height: 0;
@@ -202,6 +208,16 @@ span{
     color: var(--link-color);
 }
 
+@media screen and (max-width:1124px) {
+    main{
+        width: 100vw;
+        height: 100%;
+    }
+    .background-image{
+        background-size: cover;      
+    }
+}
+
 @media screen and (max-width:843px){
     main{
         display: flex;
@@ -223,14 +239,18 @@ span{
 }
 @media screen and (max-width:672px){
     main{
-        height: 100%;
+        height: 100vh;
     }
-    
+    .form_field{
+        gap: 14px;
+    }
+
     .form_field,  legend{
         display: flex;
         justify-content: center;
         
     } 
+
     .form__input{
         width: 200px;
     }
@@ -239,13 +259,13 @@ span{
     }
     
     .input__invalid ~ span::before{
-        content:"*This field is required";
+        content:attr(data-content);
         color: var(--invalid-color);
         font-weight: 600;
         font-size: 0.7rem;
         position: absolute;
-        top: 40px;
+        top: 75px;
         left: 0;
-        width: 150px;
+        width: 250px;
     }
 }
